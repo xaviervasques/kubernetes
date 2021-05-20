@@ -27,7 +27,7 @@ def train():
     METADATA_PATH = os.path.join(MODEL_DIR, METADATA_FILE)
 
     # Load training data
-    url="https://raw.githubusercontent.com/xaviervasques/Jenkins/main/train.csv"
+    url="https://raw.githubusercontent.com/xaviervasques/kubernetes/main/train.csv"
     data_train = pd.read_csv(url)
 
     y_train = data_train['# Letter'].values

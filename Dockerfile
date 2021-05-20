@@ -10,6 +10,7 @@ COPY requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt 
 
 COPY id_rsa ./id_rsa
+COPY inference.py ./inference.py
 COPY train.py ./train.py
 
 

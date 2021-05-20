@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: inference-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: inference-container
+        imagePullPolicy: Always
+        image: xaviervasques/kubernetes-inference:latest
+        command: ["python3",  "inference.py","rm", "./id_rsa"]
+      restartPolicy: Never
+  backoffLimit: 0
+
