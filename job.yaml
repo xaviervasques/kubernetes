@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: train-models-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: train-container
+        imagePullPolicy: Always
+        image: xaviervasques/kubernetes-models:latest
+        command: ["python3",  "train.py"]
+      restartPolicy: Never
+  backoffLimit: 0
+
